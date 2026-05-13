@@ -14,7 +14,7 @@
   >
 
   <!-- Main styles -->
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <!-- Background noise overlay -->
@@ -32,20 +32,21 @@
 
   <!-- Main content -->
   <main class="hero">
-    <p class="eyebrow">Google AI inspired demo</p>
+    <p class="eyebrow">Google AI • Android 17 style</p>
 
-    <h1>Cloud-like motion. Soft glow. Future vibe.</h1>
+    <h1>Liquid glass. Ambient clouds. Adaptive color.</h1>
 
     <p class="subhead">
-      A lightweight landing page with animated gradient orbs, drifting cloud forms,
-      and a glass UI panel. No assets, just CSS and a little JavaScript.
+      A mini “Android 17” inspired card with blurred glass, soft gradients,
+      and live accent controls layered over an AI cloud background.
     </p>
 
     <div class="actions">
-      <a href="#" class="btn primary">Try Demo</a>
-      <a href="#" class="btn secondary">View Details</a>
+      <a href="#demo-card" class="btn primary">Open live demo</a>
+      <a href="#" class="btn secondary">Docs</a>
     </div>
 
+    <!-- Info panel -->
     <section class="panel">
       <div class="panel-card">
         <span class="label">Animation mode</span>
@@ -53,11 +54,64 @@
       </div>
       <div class="panel-card">
         <span class="label">Style</span>
-        <strong>Soft AI glow</strong>
+        <strong>Blur-heavy liquid glass</strong>
       </div>
       <div class="panel-card">
         <span class="label">Built with</span>
         <strong>HTML, CSS, JS</strong>
+      </div>
+    </section>
+
+    <!-- Actual interactive demo -->
+    <section id="demo-card" class="demo-shell">
+      <div class="demo-header">
+        <span class="demo-chip">Android 17 preview</span>
+        <span class="demo-sub">Material You • Glass UI</span>
+      </div>
+
+      <div class="demo-card">
+        <div class="demo-wave"></div>
+
+        <div class="demo-row">
+          <div>
+            <p class="demo-title">Ambient flow</p>
+            <p class="demo-desc">Subtle motion, frosted blur, and adaptive color tints.</p>
+          </div>
+          <button class="switch" aria-label="Toggle ambient flow">
+            <span class="switch-thumb"></span>
+          </button>
+        </div>
+
+        <div class="demo-divider"></div>
+
+        <div class="demo-controls">
+          <div class="demo-control">
+            <span class="control-label">Accent color</span>
+            <input
+              type="range"
+              min="0"
+              max="360"
+              value="165"
+              class="accent-slider"
+            />
+          </div>
+
+          <div class="demo-control">
+            <span class="control-label">Blur intensity</span>
+            <input
+              type="range"
+              min="8"
+              max="28"
+              value="18"
+              class="blur-slider"
+            />
+          </div>
+        </div>
+
+        <div class="demo-badges">
+          <span class="badge">Real-time preview</span>
+          <span class="badge">CSS only visuals</span>
+        </div>
       </div>
     </section>
   </main>
