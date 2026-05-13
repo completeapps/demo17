@@ -424,6 +424,70 @@ input[type="range"]::-moz-range-thumb{
   100%{transform:rotate(360deg);}
 }
 
+.scan-bar{
+  position:fixed;
+  top:12px;
+  left:50%;
+  transform:translateX(-50%);
+  width:min(520px, 94%);
+  z-index:3;
+  pointer-events:none;
+}
+
+.scan-bar-inner{
+  position:relative;
+  padding:8px 12px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.16);
+  background:rgba(6,16,24,.88);
+  backdrop-filter:blur(18px);
+  display:flex;
+  align-items:center;
+  gap:8px;
+  font-size:.8rem;
+  color:#e9fbff;
+  overflow:hidden;
+}
+
+.scan-bar .dot{
+  width:8px;
+  height:8px;
+  border-radius:50%;
+  background:rgba(88,240,214,1);
+  box-shadow:0 0 10px rgba(88,240,214,.9);
+  animation:pulse 1.4s ease-in-out infinite;
+}
+
+.scan-text{
+  opacity:.85;
+}
+
+.scan-highlight{
+  position:absolute;
+  left:-20%;
+  top:0;
+  width:40%;
+  height:100%;
+  background:linear-gradient(90deg,
+    transparent,
+    hsla(var(--accent-hue) 95% 80% / .42),
+    transparent);
+  mix-blend-mode:screen;
+  animation:scan-sweep 3.6s ease-in-out infinite;
+  pointer-events:none;
+}
+
+@keyframes pulse{
+  0%,100%{transform:scale(1);opacity:1}
+  50%{transform:scale(1.5);opacity:.4}
+}
+
+@keyframes scan-sweep{
+  0%{transform:translateX(-120%)}
+  40%{transform:translateX(160%)}
+  100%{transform:translateX(160%)}
+}
+
 /* Responsive tweaks */
 @media (max-width: 800px){
   .panel{grid-template-columns:1fr}
