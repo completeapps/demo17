@@ -488,6 +488,41 @@ input[type="range"]::-moz-range-thumb{
   100%{transform:translateX(160%)}
 }
 
+.sticky-panel{
+  position:sticky;
+  top:0;
+  z-index:2;
+  display:flex;
+  justify-content:center;
+  pointer-events:none;
+  padding-top:10px;
+}
+
+.sticky-pill{
+  pointer-events:auto;
+  padding:6px 12px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,.16);
+  background:rgba(5,14,22,.82);
+  backdrop-filter:blur(16px);
+  display:flex;
+  align-items:center;
+  gap:6px;
+  font-size:.78rem;
+  color:#e9fbff;
+}
+
+.pill-dot{
+  width:6px;
+  height:6px;
+  border-radius:50%;
+  background:rgba(88,240,214,1);
+}
+
+.pill-label{
+  opacity:.8;
+}
+
 /* Responsive tweaks */
 @media (max-width: 800px){
   .panel{grid-template-columns:1fr}
