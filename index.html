@@ -14,7 +14,7 @@
   >
 
   <!-- IMPORTANT: change to style.css if that is your actual filename -->
-  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
   <!-- Background layers -->
@@ -26,57 +26,46 @@
   <div class="cloud cloud-2"></div>
   <div class="cloud cloud-3"></div>
 
-  <!-- Screen scan / Ask Google bar -->
-  <div class="scan-bar">
-    <div class="scan-bar-inner">
-      <span class="dot"></span>
-      <span class="scan-text">Ask Google about this screen…</span>
-    </div>
-    <div class="scan-highlight"></div>
-  </div>
-
-  <!-- Volume HUD -->
-  <aside class="volume-hud">
-    <div class="volume-icon"></div>
-    <div class="volume-track">
-      <div class="volume-fill"></div>
-      <div class="volume-thumb"></div>
-    </div>
-  </aside>
-
-  <!-- Main layout -->
   <div class="page">
+    <!-- Top status pill (always visible) -->
     <header class="sticky-panel">
       <div class="sticky-pill">
         <span class="pill-dot"></span>
-        <span class="pill-label">AI session live</span>
+        <span class="pill-label">AI playground · Android 17 style</span>
       </div>
     </header>
 
-    <main class="hero">
+    <!-- Simple "tabs" to switch views -->
+    <nav class="nav-tabs">
+      <button class="nav-tab nav-tab--active" data-view="home">Home</button>
+      <button class="nav-tab" data-view="volume">Volume HUD</button>
+      <button class="nav-tab" data-view="ai-search">AI search</button>
+    </nav>
+
+    <!-- HOME VIEW -->
+    <main class="hero view view--active" data-view-id="home">
       <p class="eyebrow">Google AI • Android 17 style</p>
 
-      <h1>Glass textures. Ambient clouds. Adaptive color.</h1>
+      <h1>Liquid glass. Ambient clouds. Adaptive color.</h1>
 
       <p class="subhead">
-        A mini Android 17–inspired demo with blurred panels, glowing gradients,
-        and live controls layered over an AI cloud background.
+        A small demo of Android 17’s blur-heavy, glass UI direction
+        with interactive panels on separate screens.
       </p>
 
       <div class="actions">
-        <a href="#demo-card" class="btn primary">Open live demo</a>
-        <a href="#" class="btn secondary">Docs</a>
+        <button class="btn primary" data-view="volume">Try volume demo</button>
+        <button class="btn secondary" data-view="ai-search">Try AI search demo</button>
       </div>
 
-      <!-- Info panel -->
       <section class="panel">
         <div class="panel-card">
-          <span class="label">Animation mode</span>
-          <strong>Turquoise cloud flow</strong>
+          <span class="label">Design language</span>
+          <strong>Blur glass overlays</strong>
         </div>
         <div class="panel-card">
-          <span class="label">Style</span>
-          <strong>Blur-heavy liquid glass</strong>
+          <span class="label">Inspiration</span>
+          <strong>Android 17 volumes & panels</strong>
         </div>
         <div class="panel-card">
           <span class="label">Built with</span>
@@ -84,68 +73,73 @@
         </div>
       </section>
 
-      <!-- Demo card -->
-      <section id="demo-card" class="demo-shell">
-        <div class="demo-header">
-          <span class="demo-chip">Android 17 preview</span>
-          <span class="demo-sub">Material You • Glass UI</span>
-        </div>
-
-        <div class="demo-card">
-          <div class="demo-wave"></div>
-
-          <div class="demo-row">
-            <div>
-              <p class="demo-title">Ambient flow</p>
-              <p class="demo-desc">
-                Subtle motion, frosted blur, and adaptive color tints.
-              </p>
-            </div>
-            <button class="switch" aria-label="Toggle ambient flow">
-              <span class="switch-thumb"></span>
-            </button>
-          </div>
-
-          <div class="demo-divider"></div>
-
-          <div class="demo-controls">
-            <div class="demo-control">
-              <span class="control-label">Accent color</span>
-              <input
-                type="range"
-                min="0"
-                max="360"
-                value="165"
-                class="accent-slider"
-              />
-            </div>
-
-            <div class="demo-control">
-              <span class="control-label">Blur intensity</span>
-              <input
-                type="range"
-                min="8"
-                max="28"
-                value="18"
-                class="blur-slider"
-              />
-            </div>
-          </div>
-
-          <div class="demo-badges">
-            <span class="badge">Real-time preview</span>
-            <span class="badge">CSS-only visuals</span>
-          </div>
-        </div>
-      </section>
-
-      <!-- Extra content so you can scroll and see sticky behavior -->
       <section class="spacer">
         <p class="spacer-text">
-          Scroll to see how the top pill and background behave with motion and blur.
+          Use the tabs above or the buttons to switch between demos.
         </p>
       </section>
     </main>
+
+    <!-- VOLUME VIEW -->
+    <section class="view view-center" data-view-id="volume">
+      <div class="view-header">
+        <h2>Volume HUD demo</h2>
+        <p>Blurred pill with interactive level, inspired by Android 17 leaks.</p>
+      </div>
+
+      <!-- Centered volume panel that looks like phone UI -->
+      <div class="volume-panel">
+        <div class="volume-panel-header">
+          <div class="volume-panel-icon"></div>
+          <span class="volume-panel-label">Media volume</span>
+        </div>
+
+        <div class="volume-panel-slider">
+          <div class="volume-panel-track">
+            <div class="volume-panel-fill"></div>
+          </div>
+          <div class="volume-panel-thumb"></div>
+        </div>
+
+        <div class="volume-panel-level-label">
+          <span class="volume-level-text">70%</span>
+        </div>
+      </div>
+
+      <p class="hint">Click or drag on the slider bar to change the volume.</p>
+    </section>
+
+    <!-- AI SEARCH VIEW -->
+    <section class="view view-center" data-view-id="ai-search">
+      <div class="view-header">
+        <h2>AI screen search demo</h2>
+        <p>Centered “Ask about this screen” overlay with scanning animation.</p>
+      </div>
+
+      <div class="aisearch-card">
+        <div class="aisearch-bar">
+          <span class="aisearch-dot"></span>
+          <span class="aisearch-text">Ask about this screen…</span>
+          <button class="aisearch-button">Search</button>
+        </div>
+
+        <div class="aisearch-scan-area">
+          <div class="aisearch-scan-highlight"></div>
+          <div class="aisearch-hints">
+            <span class="badge">Summarize</span>
+            <span class="badge">Explain</span>
+            <span class="badge">Translate</span>
+          </div>
+        </div>
+
+        <div class="aisearch-result">
+          <p class="aisearch-result-title">Try it</p>
+          <p class="aisearch-result-body">
+            Click “Search” to trigger a fake AI response and animate the highlight.
+          </p>
+        </div>
+      </div>
+    </section>
   </div>
 
   <script src="script.js"></script>
